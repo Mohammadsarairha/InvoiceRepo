@@ -1,0 +1,229 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container"> 
+    <div class="demo-container">
+        <div id="form-demo">
+            <div class="widget-container">
+                <div id="select-company-text">Select company:</div>
+                <div id="select-company"></div>
+                <div id="form"></div>
+            </div>
+            <div class="options">
+                <div class="caption">Options</div>
+                <div class="option">
+                    <span>Label mode:</span>
+                    <div id="label-mode"></div>
+                </div>
+                <div class="option">
+                    <span>Label location:</span>
+                    <div id="label-location"></div>
+                </div>
+                <div class="option">
+                    <span>Columns count:</span>
+                    <div id="columns-count"></div>
+                </div>
+                <div class="option">
+                    <span>Min column width:</span>
+                    <div id="min-column-width"></div>
+                </div>
+                <div class="option">
+                    <span>Form width:</span>
+                    <div id="width"></div>
+                </div>
+                <div class="option">
+                    <div id="read-only"></div>
+                </div>
+                <div class="option">
+                    <div id="show-colon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        
+
+        $(() => {
+            const companies = [{
+                ID: 1,
+                Name: 'Super Mart of the West',
+                Address: '702 SW 8th Street',
+                City: 'Bentonville',
+                State: 'Arkansas',
+                ZipCode: 72716,
+                Phone: '(800) 555-2797',
+                Fax: '(800) 555-2171',
+                Website: '',
+                Active: true,
+            }, {
+                ID: 2,
+                Name: 'Electronics Depot',
+                Address: '2455 Paces Ferry Road NW',
+                City: 'Atlanta',
+                State: 'Georgia',
+                ZipCode: 30339,
+                Phone: '(800) 595-3232',
+                Fax: '(800) 595-3231',
+                Website: '',
+                Active: true,
+            }, {
+                ID: 3,
+                Name: 'K&S Music',
+                Address: '1000 Nicllet Mall',
+                City: 'Minneapolis',
+                State: 'Minnesota',
+                ZipCode: 55403,
+                Phone: '(612) 304-6073',
+                Fax: '(612) 304-6074',
+                Website: '',
+                Active: true,
+            }, {
+                ID: 4,
+                Name: "Tom's Club",
+                Address: '999 Lake Drive',
+                City: 'Issaquah',
+                State: 'Washington',
+                ZipCode: 98027,
+                Phone: '(800) 955-2292',
+                Fax: '(800) 955-2293',
+                Website: '',
+                Active: true,
+            }];
+            const form = $('#form').dxForm({
+                labelMode: 'floating',
+                formData: companies[0],
+                readOnly: false,
+                showColonAfterLabel: true,
+                labelLocation: 'left',
+                minColWidth: 300,
+                colCount: 2,
+            }).dxForm('instance');
+
+            const companySelectorSelectBox = $('#select-company').dxSelectBox({
+                displayExpr: 'Name',
+                dataSource: companies,
+                inputAttr: { 'aria-label': 'Company' },
+                labelMode: 'floating',
+                label: 'Select company',
+                value: companies[0],
+                onValueChanged(data) {
+                    form.option('formData', data.value);
+                },
+            }).dxSelectBox('instance');
+
+            const companySelectorText = $('#select-company-text');
+
+            $('#label-mode').dxSelectBox({
+                items: ['outside', 'static', 'floating', 'hidden'],
+                value: 'floating',
+                inputAttr: { 'aria-label': 'Label Mode' },
+                onValueChanged(data) {
+                    form.option('labelMode', data.value);
+
+                    if (data.value === 'outside') {
+                        companySelectorSelectBox.option('labelMode', 'hidden');
+                        companySelectorText.show();
+                    } else {
+                        companySelectorSelectBox.option('labelMode', data.value);
+                        companySelectorText.hide();
+                    }
+                },
+            });
+
+            $('#label-location').dxSelectBox({
+                items: ['left', 'top'],
+                value: 'left',
+                inputAttr: { 'aria-label': 'Label Location' },
+                onValueChanged(data) {
+                    form.option('labelLocation', data.value);
+                },
+            });
+
+            $('#columns-count').dxSelectBox({
+                items: ['auto', 1, 2, 3],
+                inputAttr: { 'aria-label': 'Column Count' },
+                value: 2,
+                onValueChanged(data) {
+                    form.option('colCount', data.value);
+                },
+            });
+
+            $('#min-column-width').dxSelectBox({
+                items: [150, 200, 300],
+                inputAttr: { 'aria-label': 'Min Column Width' },
+                value: 300,
+                onValueChanged(data) {
+                    form.option('minColWidth', data.value);
+                },
+            });
+
+            $('#width').dxNumberBox({
+                value: undefined,
+                max: 550,
+                inputAttr: { 'aria-label': 'Width' },
+                onValueChanged(data) {
+                    form.option('width', data.value);
+                },
+            });
+
+            $('#read-only').dxCheckBox({
+                text: 'readOnly',
+                value: false,
+                onValueChanged(data) {
+                    form.option('readOnly', data.value);
+                },
+            });
+
+            $('#show-colon').dxCheckBox({
+                text: 'showColonAfterLabel',
+                value: true,
+                onValueChanged(data) {
+                    form.option('showColonAfterLabel', data.value);
+                },
+            });
+        });
+
+
+    </script>
+}
+
+<style>
+    .widget-container {
+        margin-right: 320px;
+        padding: 20px;
+        max-width: 550px;
+        min-width: 300px;
+    }
+
+    #form {
+        margin-top: 25px;
+    }
+
+    #select-company-text {
+        display: none;
+    }
+
+    .options {
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 260px;
+        top: 0;
+        background-color: rgba(191, 191, 191, 0.15);
+    }
+
+    .caption {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .option {
+        margin-top: 10px;
+    }
+
+</style>

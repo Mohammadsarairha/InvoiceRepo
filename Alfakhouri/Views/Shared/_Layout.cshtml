@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Alfakhouri</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/devexpress/dx.light.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Alfakhouri.styles.css" asp-append-version="true" />
+    <!-- Diagram and Gantt stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devexpress-diagram/2.2.2/dx-diagram.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devexpress-gantt/4.1.49/dx-gantt.min.css" rel="stylesheet">
+
+    <!-- Theme stylesheets (reference only one of them) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.carmine.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.carmine.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.contrast.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.contrast.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.darkmoon.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.darkmoon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.darkviolet.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.darkviolet.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.greenmist.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.greenmist.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.blue.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.blue.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.blue.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.blue.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.lime.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.lime.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.lime.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.lime.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.orange.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.orange.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.orange.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.orange.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.purple.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.purple.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.purple.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.purple.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.teal.dark.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.teal.dark.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.teal.light.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.material.teal.light.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.softblue.compact.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme-dist/23.1.6/css/dx.softblue.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Alfakhouri</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Alfakhouri - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/devexpress/dx.all.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
