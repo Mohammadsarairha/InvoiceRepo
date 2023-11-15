@@ -2448,11 +2448,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\DotnetProject\\Alfakhouri\\Alfakhouri\\Alfakhouri.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\Mohammadsarairha\\InvoiceRepo\\Alfakhouri\\Alfakhouri.csproj",
       "projectName": "Alfakhouri",
-      "projectPath": "C:\\Users\\HP\\DotnetProject\\Alfakhouri\\Alfakhouri\\Alfakhouri.csproj",
+      "projectPath": "C:\\Users\\HP\\Source\\Repos\\Mohammadsarairha\\InvoiceRepo\\Alfakhouri\\Alfakhouri.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\DotnetProject\\Alfakhouri\\Alfakhouri\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Source\\Repos\\Mohammadsarairha\\InvoiceRepo\\Alfakhouri\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
